@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Banglore House Price Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+</head>
+<body>
+<div class="img"></div>
+<form class="form" action="{{ url_for('predict')}}" method="post" align='center'>
+	<label for="location">Select location : </label>
+  	<select id="location" name="location">
+	    <option value='Electronic City'>Electronic City</option>
+	    <option value='Rajaji Nagar'>Rajaji Nagar</option>
+	    <option value='JP nagar'>JP nagar</option>
+	    <option value='Rajaji Nagar'>Rajaji Nagar</option>
+	    <option value='Rajaji Nagar'>Rajaji Nagar</option>
+  	</select>
+  	<br>
+	<label for="area">Enter Area (square ft.) : </label>
+	<input type="text" name="area" id='area' required="required" />
+	<br>
+  <label for="bath">Select total no. of bathroom : </label>
+  <select id="bath" name="bath">
+    <option value='1'>1</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'>5</option>
+    <option value='6'>6</option>
+  </select>
+  <br>
+  <label for="bhk">Select total no. of bedroom : </label>
+	<select id="bhk" name="bhk">
+    <option value='1'>1</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'>5</option>
+    <option value='6'>6</option>
+  </select>
+  <br>
+	<button type="submit">Predict</button>
+</form>
+<br>
+   <br>
+   <h2 align='center'>{{ prediction_text }}<h2>
+</body>
+</html>
